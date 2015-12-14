@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+		<script src="people.factory.js"></script> 
+		<script src="people.service.js"></script> 
+		<script src="main.controller.js"></script>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+	<body>
+		<div class="wrapper" ng-app="myApp" ng-controller="GangBang">
+			<div class="data-box" ng-show="modal" ng-animate="{show: 'example-show', hide: 'example-hide'}">
+				<div class="modalBody" >
+					<a class="btn btn-link" href="#" role="button" ng-click="modal = !modal">X</a>
+					<label for="fName">First Name</label>
+					<input type="text" id="fName" ng-model="user.name">
+					<label for="lName">Last Name</label>
+					<input type="text" id="lName" ng-model="user.lastName">
+					<label for="number">Phone Number</label>
+					<input type="text" id="number" ng-model="user.number">
+					<button class="btn btn-info" type="submit" ng-click="addUser(user)">click me!</button>
+				</div>
+			</div>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Surname</td>
+						<td>Number</td>
+					</tr>
+				</thead>
+				<tbody ng-repeat="user in users">
+					<tr>
+						<td>{{user.name}}</td>
+						<td>{{user.lastName}}</td>
+						<td>{{user.number}}</td>
+						<td><button class="btn btn-danger" ng-click="removeItem($index)">remove</button></td>
+						<td><button class="btn btn-primary" ng-click="editItem(user)">edit</button></td>
+					</tr>
+					<tr ng-if='user == activeUser'>
+						<td><input type="text" class="form-control" ng-model="user.name"/></td>
+						<td><input type="text" class="form-control" ng-model="user.lastName"/></td>
+						<td><input type="text" class="form-control" ng-model="user.number"/></td>
+						<td><button class="btn btn-success" ng-click="updateItem($index)">update</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="button" class="btn btn-success" ng-click="modal = !modal">Open me!</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+label{
+    display: block;
+}
+.table>tbody>tr>td,
+.table>thead>tr>td{
+    vertical-align: middle;
+    padding: 8px 15px;
+}
+.wrapper>button{
+    margin:0 15px;
+}
+.data-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .5);
+}
+.modalBody{
+    position: absolute;
+    width: 275px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 23%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, .8);
+    padding: 50px;
+    opacity: 1;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+.modalBody input{
+    display: block;
+    margin-bottom: 10px;
+}
+.modalBody button{
+    display: block;
+}
+.modalBody a{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #b92c28;
+}
+.modalBody a:hover{
+    color: #b92c28;
+    text-decoration: none;
+}
+.data-box.ng-hide{
+    opacity: 0;
+}
+.data-box.ng-hide-add, .data-box.ng-hide-remove {
+    transition: all linear 0.5s;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "people",
+  "authors": [
+    "nikita <subbotnik55@gmail.com>"
+  ],
+  "description": "test application",
+  "main": "bower",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8"
+  }
+}
